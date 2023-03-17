@@ -25,5 +25,8 @@ jobs:
       - name: Install packages
         run: npm install
 
+      - name: Install host dependencies
+        run: sudo npx playwright install-deps
+
       - name: Run test on browserstack
         run: npm test
