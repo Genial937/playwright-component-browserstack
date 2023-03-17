@@ -1,0 +1,29 @@
+name: Playwright browserstack
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: microsoft/playwright-github-action@v1 # uses
+
+      - name: Install packages
+        run: npm install
+
+      - name: Run test on browserstack
+        run: npm test
