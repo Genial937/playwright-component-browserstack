@@ -1,6 +1,6 @@
 // playwright.config.js
 // @ts-check
-const { devices } = require('@playwright/test');
+// const { devices } = require('@playwright/test');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
@@ -45,7 +45,7 @@ const config = {
       use: {
         browserName: 'webkit',
         // Config to use playwright emulated devices.
-        ...devices['iPhone 12 Pro Max'],
+        // ...devices['iPhone 12 Pro Max'],
       },
     },
     // -- Local Projects --
