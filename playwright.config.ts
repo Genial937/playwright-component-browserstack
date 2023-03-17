@@ -8,6 +8,7 @@ const config = {
   testMatch: '**/*.spec.ts',
   timeout: 60000,
   use: {
+    headless: false,
     viewport: null
   },
   projects: [
