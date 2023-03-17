@@ -40,14 +40,14 @@ const config = {
         ignoreHTTPSErrors: true
       },
     },
-    // {
-    //   name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
-    //   use: {
-    //     browserName: 'webkit',
-    //     // Config to use playwright emulated devices.
-    //     // ...devices['iPhone 12 Pro Max'],
-    //   },
-    // },
+    {
+      name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
+      use: {
+        browserName: 'webkit',
+        // Config to use playwright emulated devices.
+        // ...devices['iPhone 12 Pro Max'],
+      },
+    },
     // -- Local Projects --
 
     // Test against playwright browsers
