@@ -9,8 +9,8 @@ const BrowserStackLocal = require('browserstack-local');
 
 // BrowserStack Specific Capabilities.
 const caps = {
-    browser: 'chrome',
-    os: 'osx',
+    browser: 'playwright-webkit',
+    os: 'os x',
     os_version: 'catalina',
     name: 'Playwright browserstack test',
     build: 'playwright-and-browserstack',
@@ -19,6 +19,7 @@ const caps = {
         process.env.BROWSERSTACK_ACCESS_KEY || 'quipLyBy7x5cV3owaxKa',
     'browserstack.local': process.env.BROWSERSTACK_LOCAL || false,
     'client.playwrightVersion': clientPlaywrightVersion,
+    'browserstack.playwrightVersion': '1.latest',
 };
 
 exports.bsLocal = new BrowserStackLocal.Local();
@@ -64,7 +65,7 @@ exports.test = base.test.extend({
         // Use BrowserStack Launched Browser according to capabilities for cross-browser testing.
         if (testInfo.project.name.match(/browserstack/)) {
             patchCaps(testInfo.project.name, `${testInfo.file} - ${testInfo.title}`);
-            const vBrowser = await playwright.chromium.connect({
+            const vBrowser = await playwright.webkit.connect({
                 wsEndpoint:
                     `wss://cdp.browserstack.com/playwright?caps=` +
                     `${encodeURIComponent(JSON.stringify(caps))}`,
