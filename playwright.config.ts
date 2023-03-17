@@ -44,6 +44,8 @@ const config = {
       name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
       use: {
         browserName: 'webkit',
+        channel: 'webkit',
+        ignoreHTTPSErrors: true
         // Config to use playwright emulated devices.
         // ...devices['iPhone 12 Pro Max'],
       },
