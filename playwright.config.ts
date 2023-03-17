@@ -45,7 +45,7 @@ const config = {
       use: {
         browserName: 'webkit',
         // Config to use playwright emulated devices.
-        // ...devices['iPhone 12 Pro Max'],
+        ...devices['iPhone 12 Pro Max'],
       },
     },
     // -- Local Projects --
