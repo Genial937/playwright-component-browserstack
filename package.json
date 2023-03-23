@@ -42,8 +42,8 @@
     ]
   },
   "devDependencies": {
-    "playwright": "~1.28.0",
-    "@playwright/test": "~1.17.2",
+    "playwright": "1.28.0",
+    "@playwright/test": "1.28.0",
     "browserstack-local": "^1.4.8"
   }
 }
