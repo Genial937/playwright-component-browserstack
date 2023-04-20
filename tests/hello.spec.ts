@@ -1,4 +1,4 @@
-import { expect } from '@playwright/test';
+import { expect } from '@playwright/experimental-ct-react';
 const { test } = require('../fixtures');
 
 // eslint-disable-next-line jest/valid-title

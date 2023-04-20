@@ -1,9 +1,9 @@
 // playwright.config.js
 // @ts-check
-const { devices } = require('@playwright/test');
+import { defineConfig, devices } from '@playwright/experimental-ct-react';
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
-const config = {
+export default defineConfig({
     testDir: 'tests',
     testMatch: '**/*.spec.ts',
     // Use globalSetup & globalTearedown only if browserstack.local = true
@@ -43,14 +43,14 @@ const config = {
                 ignoreHTTPSErrors: true
             },
         },
-        {
-            name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
-            use: {
-                browserName: 'webkit',
-                // Config to use playwright emulated devices.
-                // ...devices['iPhone 12 Pro Max'],
-            },
-        },
+        // {
+        //     name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
+        //     use: {
+        //         browserName: 'webkit',
+        //         // Config to use playwright emulated devices.
+        //         // ...devices['iPhone 12 Pro Max'],
+        //     },
+        // },
         // -- Local Projects --
 
         // Test against playwright browsers
@@ -84,5 +84,5 @@ const config = {
         //   }
         // },
     ],
-};
-module.exports = config;
+});
+

@@ -18,11 +18,17 @@ BROWSERSTACK_ACCESS_KEY="Your access key"
 Inside project folder run:
 
 ```
-npm install
+yarn install
 
 // and then run to run tests on browserstack
-npm test
+yarn test hello
 
 // to run browserstack locally
-npm test:local
+yarn test:local hello
+
+// run playwright component test without browserstack
+yarn test-ct ButtonTwoTest
+
+// run playwright component test with browserstack
+yarn test-ct:local ButtonOneTest
 ```
