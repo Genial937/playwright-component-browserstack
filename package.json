@@ -21,7 +21,9 @@
     "build": "react-scripts build",
     "test": "npx playwright test --config=./playwright.config.ts",
     "test:local": "BROWSERSTACK_LOCAL=true npx playwright test --config=./playwright-local.config.ts",
-    "eject": "react-scripts eject"
+    "test-ct:local": "BROWSERSTACK_LOCAL=true npx playwright test --config=./playwright-ct-local.config.ts",
+    "eject": "react-scripts eject",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -42,8 +44,8 @@
     ]
   },
   "devDependencies": {
-    "playwright": "1.28.0",
-    "@playwright/test": "1.28.0",
-    "browserstack-local": "^1.4.8"
+    "@playwright/experimental-ct-react": "^1.32.3",
+    "browserstack-local": "^1.4.8",
+    "playwright": "1.32.3"
   }
 }

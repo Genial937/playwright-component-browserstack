@@ -1,4 +1,5 @@
-const base = require('@playwright/test');
+import React from 'react'
+const base = require('@playwright/experimental-ct-react');
 const cp = require('child_process');
 const clientPlaywrightVersion = cp
     .execSync('npx playwright --version')
@@ -87,5 +88,9 @@ exports.test = base.test.extend({
         } else {
             use(page);
         }
+    },
+    mount: async ({ mount: baseMount }, use) => {
+        const mount = (component) => baseMount(<>{component} </>)
+        await use(mount)
     },
 });
