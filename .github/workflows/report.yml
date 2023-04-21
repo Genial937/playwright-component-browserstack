@@ -26,7 +26,7 @@ jobs:
       - name: run test
         run: yarn test-ct ButtonTwoTest
 
-      - users: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: Report
