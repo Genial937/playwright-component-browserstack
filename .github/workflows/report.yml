@@ -1,0 +1,34 @@
+name: Frontend tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install packages in did-tests
+        run: yarn install
+
+      - name: run test
+        run: yarn test-ct ButtonTwoTest
+
+      - users: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Report
+          path: playwright-report
+          retention-days: 30

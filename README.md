@@ -28,6 +28,7 @@ yarn test:local hello
 
 // run playwright component test without browserstack
 yarn test-ct ButtonTwoTest
+yarn test-ct ButtonTwoTest --debug
 
 // run playwright component test with browserstack
 yarn test-ct:local ButtonOneTest
